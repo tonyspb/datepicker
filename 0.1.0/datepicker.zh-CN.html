@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple, lightweight, customizable jQuery datepicker plugin.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, jQuery plugin, datepicker, front-end, frontend, web development">
+    <meta name="author" content="Fengyuan Chen">
+    <title>Datepicker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- header -->
+    <header class="navbar navbar-static-top docs-navbar-top" id="top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="./" class="navbar-brand">Datepicker</a>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/fengyuanchen/datepicker">Github</a></li>
+            <li><a href="https://github.com/fengyuanchen/">About</a></li>
+            <li><a href="https://fengyuanchen.github.io/">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- banner -->
+    <div class="jumbotron docs-jumbotron">
+      <div class="container">
+        <h1>Datepicker <small class="version">v0.1.0</small></h1>
+        <p class="lead">A simple, lightweight, customizable jQuery datepicker plugin.</p>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+      <h1 class="page-header">I18n<small> - zh-CN</small></h1>
+      <h2 class="page-header">Demo</h2>
+      <p>Files:</p>
+      <pre class="prettyprint">&lt;script src=&quot;/path/to/jquery.js&quot;&gt;&lt;/script&gt;&lt;!-- jQuery is required --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/datepicker.css&quot;&gt;
+&lt;script src=&quot;/path/to/datepicker.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/to/datepicker.zh-CN.js&quot;&gt;&lt;/script&gt;&lt;!-- zh-CN --&gt;</pre>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input class=&quot;form-control&quot; type=&quot;text&quot; datepicker&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker>
+      </div>
+
+      <h2 class="page-header">Setup<small> - datepicker.zh-CN.js</small></h2>
+      <pre class="prettyprint">
+$.fn.datepicker.setDefaults({
+  autoClose: false,
+  dateFormat: &quot;yyyy-mm-dd&quot;,
+  days: [&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;],
+  daysShort: [&quot;周日&quot;, &quot;周一&quot;, &quot;周二&quot;, &quot;周三&quot;, &quot;周四&quot;, &quot;周五&quot;, &quot;周六&quot;],
+  daysMin: [&quot;日&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;, &quot;六&quot;],
+  months: [&quot;一月&quot;, &quot;二月&quot;, &quot;三月&quot;, &quot;四月&quot;, &quot;五月&quot;, &quot;六月&quot;, &quot;七月&quot;, &quot;八月&quot;, &quot;九月&quot;, &quot;十月&quot;, &quot;十一月&quot;, &quot;十二月&quot;],
+  monthsShort: [&quot;1月&quot;, &quot;2月&quot;, &quot;3月&quot;, &quot;4月&quot;, &quot;5月&quot;, &quot;6月&quot;, &quot;7月&quot;, &quot;8月&quot;, &quot;9月&quot;, &quot;10月&quot;, &quot;11月&quot;, &quot;12月&quot;],
+  showMonthAfterYear: true,
+  viewStart: 0,
+  weekStart: 1,
+  yearSuffix: &quot;年&quot;
+});</pre>
+    </div>
+
+    <footer class="docs-footer">
+      <div class="container f-navbar-bottom">
+        <div class="btn-group">
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/">Github</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/issues">Issues</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/releases">Releases</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/blob/master/LICENSE.md">License</a>
+        </div>
+        <div class="btn-group pull-right">
+          <a class="btn btn-link" href="#top" title="Back to top">TOP</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://fengyuanchen.github.io/js/main.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/datepicker.zh-CN.js"></script>
+  </body>
+</html>

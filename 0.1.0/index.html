@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple, lightweight, customizable jQuery datepicker plugin.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, jQuery plugin, datepicker, front-end, frontend, web development">
+    <meta name="author" content="Fengyuan Chen">
+    <title>Datepicker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- header -->
+    <header class="navbar navbar-static-top docs-navbar-top" id="top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="./" class="navbar-brand">Datepicker</a>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/fengyuanchen/datepicker">Github</a></li>
+            <li><a href="https://github.com/fengyuanchen/">About</a></li>
+            <li><a href="https://fengyuanchen.github.io/">More</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- banner -->
+    <div class="jumbotron docs-jumbotron">
+      <div class="container">
+        <h1>Datepicker <small class="version">v0.1.0</small></h1>
+        <p class="lead">A simple, lightweight, customizable jQuery datepicker plugin.</p>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+      <h1 class="page-header">Getting started</h1>
+
+      <!-- Installation -->
+      <h2 class="page-header">Installation</h2>
+      <p>Include files:</p>
+      <pre class="prettyprint">&lt;script src=&quot;/path/to/jquery.js&quot;&gt;&lt;/script&gt;&lt;!-- jQuery is required --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/datepicker.css&quot;&gt;&lt;!-- The default theme --&gt;
+&lt;script src=&quot;/path/to/datepicker.js&quot;&gt;&lt;/script&gt;</pre>
+
+      <!-- Usage -->
+      <h2 class="page-header">Usage</h2>
+
+      <h3>Initialize with <code>datepicker</code> attribute</h3>
+
+      <h4>Basic</h4>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker>
+      </div>
+
+      <h4>Add options with <code>data-*</code> attribute</h4>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-date-format=&quot;dd/mm/yy&quot; data-auto-close=&quot;true&quot;&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker data-date-format="dd/mm/yy" data-auto-close="true">
+      </div>
+
+      <h3>Initialize with <code>$.fn.datepicker</code> method</h3>
+
+      <h4>Basic</h4>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input class=&quot;datepicker&quot; type=&quot;text&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">$(&quot;.datepicker&quot;).datepicker();</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control datepicker" type="text">
+      </div>
+
+      <h4>Add options</h4>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input id=&quot;datepicker-add-options&quot; type=&quot;text&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">$(&quot;#datepicker-add-options&quot;).datepicker({
+  dateFormat: &quot;yyyy.m.d&quot;,
+  weekStart: 1
+});</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input id="datepicker-add-options" class="form-control datepicker" type="text">
+      </div>
+
+      <!-- Configure -->
+      <h2 class="page-header">Configure</h2>
+
+      <h3>Setup</h3>
+      <p>Setup with <code>$(&quot;#target&quot;).datepicker(options)</code>, or global setup with <code>$.fn.datepicker.setDefaults(options)</code>.</p>
+
+      <h3>Options</h3>
+      <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-date-format="mm.dd.yyyy"</code>.</p>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>autoClose</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Auto close the picker when a date was selected.</td>
+          </tr>
+          <tr>
+            <td>dateFormat</td>
+            <td>string</td>
+            <td>"mm/dd/yyyy"</td>
+            <td>For example: "dd/mm/yy", "m.d.yy", "yyyy-mm-dd", "yyyy mm dd", "yyyy-mm", "mm.dd", etc.</td>
+          </tr>
+          <tr>
+            <td>days</td>
+            <td>array</td>
+            <td>["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>daysShort</td>
+            <td>array</td>
+            <td>["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>daysMin</td>
+            <td>array</td>
+            <td>["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>disabledClass</td>
+            <td>string</td>
+            <td>"datepicker-disabled"</td>
+            <td>Use for disabled element.</td>
+          </tr>
+          <tr>
+            <td>isDisabled</td>
+            <td>function</td>
+            <td>function() { return false; }</td>
+            <td>The function will be passed a date object param, and must be returned a boolean value.</td>
+          </tr>
+          <tr>
+            <td>itemTag</td>
+            <td>string</td>
+            <td>"li"</td>
+            <td>years, months, days items element tag.</td>
+          </tr>
+          <tr>
+            <td>months</td>
+            <td>array</td>
+            <td>["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>monthsShort</td>
+            <td>array</td>
+            <td>["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>selectedClass</td>
+            <td>string</td>
+            <td>"datepicker-selected"</td>
+            <td>Use for selected element.</td>
+          </tr>
+          <tr>
+            <td>showMonthAfterYear</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>For title of current month. For example, you can set it "true" to transform "Feb 2020" to "2020 Feb"</td>
+          </tr>
+          <tr>
+            <td>template</td>
+            <td>string</td>
+            <td><a href="#default-template" class="btn btn-default btn-sm">View default template</a></td>
+            <td>It's the html template of the datepicker, and also can be customized.</td>
+          </tr>
+          <tr>
+            <td>tragger</td>
+            <td>string</td>
+            <td>undefined</td>
+            <td>A jQuery selector string.</td>
+          </tr>
+          <tr>
+            <td>viewStart</td>
+            <td>number</td>
+            <td>0</td>
+            <td>0 for "days", 1 for "months", 2 for "years".</td>
+          </tr>
+          <tr>
+            <td>weekStart</td>
+            <td>number</td>
+            <td>0</td>
+            <td>0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, 4 for Thursday, 5 for Friday, 6 for Saturday.</td>
+          </tr>
+          <tr>
+            <td>yearSuffix</td>
+            <td>string</td>
+            <td>""</td>
+            <td>For example, it may be "年" for Chinese (zh-CN).</td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="default-template"><strong>Default template:</strong></p>
+      <pre class="prettyprint">&lt;div class=&quot;datepicker-container&quot; data-type=&quot;datepicker&quot;&gt;
+  &lt;div class=&quot;datepicker-arrow&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;datepicker-content&quot;&gt;
+    &lt;div class=&quot;content-years&quot; data-type=&quot;years picker&quot;&gt;
+      &lt;ul class=&quot;datepicker-title&quot;&gt;
+        &lt;li class=&quot;datepicker-prev&quot; data-type=&quot;years prev&quot;&gt;&amp;lsaquo;&lt;/li&gt;
+        &lt;li class=&quot;col-5&quot; data-type=&quot;years current&quot;&gt;&lt;/li&gt;
+        &lt;li class=&quot;datepicker-next&quot; data-type=&quot;years next&quot;&gt;&amp;rsaquo;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;datepicker-years&quot; data-type=&quot;years&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content-months&quot; data-type=&quot;months picker&quot;&gt;
+      &lt;ul class=&quot;datepicker-title&quot;&gt;
+        &lt;li class=&quot;datepicker-prev&quot; data-type=&quot;year prev&quot;&gt;&amp;lsaquo;&lt;/li&gt;
+        &lt;li class=&quot;col-5&quot; data-type=&quot;year current&quot;&gt;&lt;/li&gt;
+        &lt;li class=&quot;datepicker-next&quot; data-type=&quot;year next&quot;&gt;&amp;rsaquo;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;datepicker-months&quot; data-type=&quot;months&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content-days&quot; data-type=&quot;days picker&quot;&gt;
+      &lt;ul class=&quot;datepicker-title&quot;&gt;
+        &lt;li class=&quot;datepicker-prev&quot; data-type=&quot;month prev&quot;&gt;&amp;lsaquo;&lt;/li&gt;
+        &lt;li class=&quot;col-5&quot; data-type=&quot;month current&quot;&gt;&lt;/li&gt;
+        &lt;li class=&quot;datepicker-next&quot; data-type=&quot;month next&quot;&gt;&amp;rsaquo;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;datepicker-week&quot; data-type=&quot;week&quot;&gt;&lt;/ul&gt;
+      &lt;ul class=&quot;datepicker-days&quot; data-type=&quot;days&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      <p class="alert alert-warning"><i class="glyphicon glyphicon-exclamation-sign"></i> All the <code>data-type=&quot;&quot;</code> attributes must be set when you customize it.</p>
+
+      <!-- Methods -->
+      <h2 class="page-header">Methods</h2>
+      <h3>Methods</h3>
+      <ul>
+        <li><strong>show</strong> - <em>Show the datepicker</em></li>
+        <li><strong>hide</strong> - <em>Hide the datepicker</em></li>
+        <li><strong>enable</strong> - <em>Enable the datepicker</em></li>
+        <li><strong>disable</strong> - <em>Disable the datepicker</em></li>
+        <li><strong>update</strong> - <em>Update the datepicker</em></li>
+      </ul>
+      <h3>Usage</h3>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">// Methods
+var $datepicker = $(&quot;#datepicker-methods&quot;),
+    $show = $(&quot;#datepicker-show&quot;),
+    $hide = $(&quot;#datepicker-hide&quot;),
+    $enable = $(&quot;#datepicker-enable&quot;),
+    $disable = $(&quot;#datepicker-disable&quot;),
+    $update = $(&quot;#datepicker-update&quot;),
+    datepicker;
+
+// Initialize
+$datepicker.datepicker();
+
+// Get the instance
+datepicker = $datepicker.data(&quot;datepicker&quot;);
+
+// Show
+$show.click(function() {
+  $datepicker.datepicker(&quot;show&quot;);
+});
+
+// Hide
+$hide.click(function() {
+  datepicker.hide();
+});
+
+// Enable
+$enable.click(function() {
+  $datepicker.datepicker(&quot;enable&quot;);
+});
+
+// Disable
+$disable.click(function() {
+  datepicker.disable();
+});
+
+// Update
+$update.click(function() {
+  $datepicker.val(&quot;02/25/2020&quot;).datepicker(&quot;update&quot;).datepicker(&quot;show&quot;);
+});
+</pre>
+      <p>Demo:</p>
+      <div class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input id="datepicker-methods" class="form-control" type="text">
+        </div>
+        <button id="datepicker-show" class="btn btn-primary">Show</button>
+        <button id="datepicker-hide" class="btn btn-info">Hide</button>
+        <button id="datepicker-enable" class="btn btn-success">Enable</button>
+        <button id="datepicker-disable" class="btn btn-danger">Disable</button>
+        <button id="datepicker-update" class="btn btn-primary">Update</button>
+      </div>
+
+       <!-- I18n -->
+      <h2 class="page-header">I18n</h2>
+      <p>For example:</p>
+      <pre class="prettyprint">// zh-CN
+$.fn.datepicker.setDefaults({
+  autoClose: false,
+  dateFormat: &quot;yyyy-mm-dd&quot;,
+  days: [&quot;星期日&quot;, &quot;星期一&quot;, &quot;星期二&quot;, &quot;星期三&quot;, &quot;星期四&quot;, &quot;星期五&quot;, &quot;星期六&quot;],
+  daysShort: [&quot;周日&quot;, &quot;周一&quot;, &quot;周二&quot;, &quot;周三&quot;, &quot;周四&quot;, &quot;周五&quot;, &quot;周六&quot;],
+  daysMin: [&quot;日&quot;, &quot;一&quot;, &quot;二&quot;, &quot;三&quot;, &quot;四&quot;, &quot;五&quot;, &quot;六&quot;],
+  months: [&quot;一月&quot;, &quot;二月&quot;, &quot;三月&quot;, &quot;四月&quot;, &quot;五月&quot;, &quot;六月&quot;, &quot;七月&quot;, &quot;八月&quot;, &quot;九月&quot;, &quot;十月&quot;, &quot;十一月&quot;, &quot;十二月&quot;],
+  monthsShort: [&quot;1月&quot;, &quot;2月&quot;, &quot;3月&quot;, &quot;4月&quot;, &quot;5月&quot;, &quot;6月&quot;, &quot;7月&quot;, &quot;8月&quot;, &quot;9月&quot;, &quot;10月&quot;, &quot;11月&quot;, &quot;12月&quot;],
+  showMonthAfterYear: true,
+  viewStart: 0,
+  weekStart: 1,
+  yearSuffix: &quot;年&quot;
+});</pre>
+      <p><a class="btn btn-primary" href="datepicker.zh-CN.html">View the demo</a></p>
+
+      <!-- Demos -->
+      <h1 class="page-header">Demos</h1>
+
+      <h3>Add a trigger</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-trigger=&quot;#show-datepicker&quot;&gt;
+&lt;span id=&quot;show-datepicker&quot;&gt;&lt;/span&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" type="text" datepicker data-trigger="#show-datepicker">
+<span id="show-datepicker" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+      </div>
+
+      <h3>Without years</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-date-format=&quot;m.d&quot;&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker data-date-format="m.d">
+      </div>
+
+      <h3>Without days</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-date-format=&quot;yyyy.mm&quot;&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker data-date-format="yyyy.mm">
+      </div>
+
+      <h3>Only years</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-date-format=&quot;yyyy&quot;&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker data-date-format="yyyy">
+      </div>
+
+      <h3>Start view with years</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input id="datepicker-view-start" type=&quot;text&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">$(&quot;#datepicker-view-start&quot;).datepicker({
+  autoClose: true,
+  viewStart: 2
+});</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input id="datepicker-view-start" class="form-control" type="text">
+      </div>
+
+      <h3>Start week with Monday</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input type=&quot;text&quot; datepicker data-week-start=&quot;1&quot;&gt;</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input class="form-control" type="text" datepicker data-week-start="1">
+      </div>
+      <h3>Disable the past days</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input id="datepicker-disable-past" type=&quot;text&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">var now = Date.now();
+
+$(&quot;#datepicker-disable-past&quot;).datepicker({
+  isDisabled: function(date) {
+    return date.valueOf() &lt; now;
+  }
+});</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input id="datepicker-disable-past" class="form-control" type="text">
+      </div>
+
+      <h3>Disable all of the Wednesday</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input id="datepicker-disable-wednesday" type=&quot;text&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">$(&quot;#datepicker-disable-wednesday&quot;).datepicker({
+  isDisabled: function(date) {
+    return date.getDay() === 3;
+  }
+});</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input id="datepicker-disable-wednesday" class="form-control" type="text">
+      </div>
+
+      <h3>Set a date range</h3>
+      <p>HTML:</p>
+      <pre class="prettyprint">&lt;input id="datepicker-date-range" type=&quot;text&quot; value=&quot;02/15/2020&quot;&gt;</pre>
+      <p>JavaScript:</p>
+      <pre class="prettyprint">var minDate = (new Date(2020, 1, 15)).getTime(),
+    maxDate = (new Date(2020, 2, 25)).getTime();
+
+$(&quot;#datepicker-date-range&quot;).datepicker({
+  isDisabled: function(date) {
+    date = date.getTime();
+
+    return (date &lt; minDate || date &gt; maxDate);
+  }
+});</pre>
+      <p>Demo:</p>
+      <div class="form-group">
+        <input id="datepicker-date-range" class="form-control" type="text" value="02/15/2020">
+      </div>
+    </div>
+
+    <footer class="docs-footer">
+      <div class="container f-navbar-bottom">
+        <div class="btn-group">
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/">Github</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/issues">Issues</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/releases">Releases</a>
+          <a class="btn btn-link" href="https://github.com/fengyuanchen/datepicker/blob/master/LICENSE.md">License</a>
+        </div>
+        <div class="btn-group pull-right">
+          <a class="btn btn-link" href="#top" title="Back to top">TOP</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://fengyuanchen.github.io/js/main.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
